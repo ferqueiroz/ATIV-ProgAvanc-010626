@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service // Define que essa classe será um service onde é definido as regras de negócios dos endpoints
 public class ProdutoService implements UserDetailsService {
 
-    @Autowired
+    @Autowired // Mesma coisa explicada no controller
     private ProdutoRepository produtoRepository;
 
     public List<ProdutoModel> buscarTodosProdutos(){
@@ -41,7 +41,7 @@ public class ProdutoService implements UserDetailsService {
         produtoRepository.deleteById(id);
     }
 
-    @Override
+    @Override // Sobrescreve um metodo da superclasse
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return produtoRepository.findByLogin(username);
     }

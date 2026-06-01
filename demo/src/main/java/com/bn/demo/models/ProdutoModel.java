@@ -4,19 +4,18 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "TB_PRODUTO")
+@Entity // Serve para criar uma entidade no banco como por exempo da classe aqui é a de produto
+@Table(name = "TB_PRODUTO") // Serve para configurar a tabela no banco como por exemplo ai o nome da tabela
 public class ProdutoModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // Declara qual é a variavel que é definida como o id da tabela
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Declara que ela vai se auto incrementar
     private Long id;
     private String nome;
-    @Column(name = "preco_do_produto")
     private BigDecimal preco;
-    @Column(name = "quant_estoque")
     private Integer estoque;
 
+    ProdutoModel () {}
 
     public Long getId() {
         return id;
